@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+html {
+  color: #FFC400;
+  font-size: 1em;
+  line-height: 1.4;
+  background-color: #121212;
+}
+
+::-moz-selection {
+  background: #FFC400;
+  text-shadow: none;
+}
+
+::selection {
+  background: #FFC400;
+  text-shadow: none;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+}
+
+h1, h2, .subtitle {
+  text-align: center;
+}
+
+.content_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 0 4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .content_wrapper {
+    padding: 0 1rem;
+  }
+}
+
+.neuron {
+  width: 50px;
+  height: 50px;
+  background-color: #121212;
+  box-shadow: 0 0 3px 0px #FFC400; /* Glow effect */
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.neuron:hover {
+  cursor: pointer;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  width: calc(50px * 4 + 10px * 3);
+  margin: 25px auto;
+  padding: 25px;
+  z-index: 2;
+}
+
+#grid_container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+#kill_msg {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.8);
+  text-align: center;
+  /* display: flex; */
+  align-items: center;
+  opacity: 0%;
+  z-index: 50;
+}
+
+.inner_kill_msg {
+  width: 100%;
+  z-index: 500;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: #FFC400;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #FFC400;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #FFC400;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.slide_settings {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 0 10px;
+}
+
+.grid_settings {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.action_row {
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+  display: table;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #121212;
+  color: #FFC400;
+  border: 1px solid #FFC400;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #FFC400;
+  color: #121212;
+}
+
+button:focus {
+  outline: 0;
+}
+
+#dont_touch {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}

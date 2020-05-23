@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hopfield Network</title>
+  <meta name="description" content="Neural Network Simulation: Hopfield Network">
+  <meta name="author" content="Kayden Mimmack">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Hopfield Network Simulation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Interact with a live Hopfield network, a type of neural network that models associative memory." />
+  <meta property="og:url" content="https://mimmackk.github.io/hopfield/simulation" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/mimmackk/hopfield/master/simulation/head.jpg" />
+  <meta name="theme-color" content="#121212">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<div class="content_wrapper">
+<h1>HOPFIELD NETWORK</h1>
+
+<div class="grid_settings">
+  <div class="slide_settings">
+    Height: <output id="grid_rows_output">3</output>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="6" value="3" class="slider" id="grid_rows">
+    </div>
+  </div><div class="slide_settings">
+    Width: <output id="grid_cols_output">4</output>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="6" value="4" class="slider" id="grid_cols">
+    </div>
+  </div>
+</div>
+
+<div id="grid_container">
+  <div id="grid">
+      <div class="neuron" id="neuron0" data-state="-1"></div>
+      <div class="neuron" id="neuron1" data-state="-1"></div>
+      <div class="neuron" id="neuron2" data-state="-1"></div>
+      <div class="neuron" id="neuron3" data-state="-1"></div>
+      <div class="neuron" id="neuron4" data-state="-1"></div>
+      <div class="neuron" id="neuron5" data-state="-1"></div>
+      <div class="neuron" id="neuron6" data-state="-1"></div>
+      <div class="neuron" id="neuron7" data-state="-1"></div>
+      <div class="neuron" id="neuron8" data-state="-1"></div>
+      <div class="neuron" id="neuron9" data-state="-1"></div>
+      <div class="neuron" id="neuron10" data-state="-1"></div>
+      <div class="neuron" id="neuron11" data-state="-1"></div>
+  </div>
+  <div id="dont_touch"></div> <!-- Barrier to stop user interaction while anims play -->
+  <div id="kill_msg">
+    <div class="inner_kill_msg">
+      Oscillates Forever
+      <br>
+      <button id="kill">Stop</button>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle">Click Circles to Interact</p>
+
+<div class="grid_actions">
+  <div class="action_row">
+    <button id="clear_grid">Clear Grid</button>
+    <button id="store_memory">Store Memory</button>
+    <button id="wipe_memory">Wipe All Memories</button>
+  </div>
+  <div class="action_row">
+    <button id="run_sync">Run Synchronous</button>
+    <button id="run_async">Run Asynchronous</button>
+  </div>
+  <div class="action_row">
+    Total Memories: <span id="num_mems">0</span>
+  </div>
+  <div class="action_row" id="mems_list">
+  </div>
+</div>
+
+<script src="js/anime.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
