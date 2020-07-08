@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+html {
+  color: #FFC400;
+  font-size: 1em;
+  background-color: #121212;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 2;
+  font-size: 1.25em;
+}
+
+img {
+  max-height: 300px;
+  max-width: 100%;
+}
+
+table {
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+table i {
+  color: white;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #121212;
+  color: #FFC400;
+  border: 1px solid #FFC400;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #FFC400;
+  color: #121212;
+}
+
+button:focus {
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 0 4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .content_wrapper {
+    padding: 0 1rem;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+::-moz-selection,
+::selection {
+  background: #FFC400;
+  text-shadow: none;
+  color: #121212;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-container img {
+  padding: 10px;
+}
+
+.flex-container i {
+  font-size: 3em;
+}
+
+.solo-img {
+  text-align: center;
+}
+
+.view-more {
+  text-align: center;
+}
+
+#collapsable {
+  display: none;
+  border: 1px solid #FFC400;
+  padding: 10px;
+}

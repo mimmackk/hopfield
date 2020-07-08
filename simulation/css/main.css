@@ -176,3 +176,15 @@ button:focus {
   top: 0;
   z-index: 20;
 }
+
+#explain-link {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  background-color: #FFC400;
+  color: #121212;
+  padding: 2px;
+  font-weight: bold;
+}
