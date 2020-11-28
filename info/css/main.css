@@ -21,6 +21,9 @@ p {
 }
 
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-height: 300px;
   max-width: 100%;
 }
@@ -65,7 +68,7 @@ a {
   text-decoration: none;
 }
 
-.content_wrapper {
+.content-wrapper {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
@@ -73,7 +76,7 @@ a {
 }
 
 @media only screen and (max-width: 800px) {
-  .content_wrapper {
+  .content-wrapper {
     padding: 0 1rem;
   }
 }
@@ -87,25 +90,6 @@ a {
   background: #FFC400;
   text-shadow: none;
   color: #121212;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.flex-container img {
-  padding: 10px;
-}
-
-.flex-container i {
-  font-size: 3em;
-}
-
-.solo-img {
-  text-align: center;
 }
 
 .view-more {

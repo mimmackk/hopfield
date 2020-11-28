@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div class="content_wrapper">
+<div class="content-wrapper">
   <h1>What's a Hopfield Network?</h1>
 
   <p>A Hopfield network is a type of artificial neural network that can model human memory.</p>
@@ -32,60 +32,33 @@
 
   <p>A Hopfield network is a simplified model for associative memory. It's initialized when given a collection of fixed-size patterns to remember.</p>
 
-  <div class="flex-container">
-    <img src="img/intro1.png">
-    <img src="img/intro2.png">
-    <img src="img/intro3.png">
-  </div>
+  <img class="solo" src="img/introset.png">
 
   <p>Each pair of neurons is assigned a numerical value that represents the strength of their relationship. If two neurons are always "on" together or always "off" together, they have a strong relationship. Two neurons that always have opposite states from each other <span class="italic">also</span> have a strong relationship. Two neurons which sometimes behave the same as each other and sometimes behave differently have a weak relationship.</p>
 
   <p>Once the strength of the connections between all neurons has been quantified, the network is ready to act. It has not stored any of the patterns we originally gave it, but if we now offer it an incomplete or broken pattern, it will automatically fill in and self-correct. If we give it random noise, it'll transform it into a pattern.</p>
 
-  <div class="flex-container">
-    <img src="img/introcorrect.png">
-    <i class="fa fa-arrow-right"></i>
-    <img src="img/intro3.png">
-  </div>
-
-  <div class="flex-container">
-    <img src="img/intronoise.png">
-    <i class="fa fa-arrow-right"></i>
-    <img src="img/intro3.png">
-  </div>
+  <img src="img/introcorrection1.png">
+  <br>
+  <img src="img/introcorrection2.png">
 
   <p>Here's how the process works.</p>
 
   <p>Let's start with a small network: a 3x4 grid. If you like, imagine this network of 12 neurons as a group of artistically-inclined lightning bugs who wish to light up together in a set of formations.</p>
 
-  <div class="flex-container">
-    <img src="img/pat1.png">
-    <img src="img/pat2.png">
-    <img src="img/pat3.png">
-    <img src="img/pat4.png">
-  </div>
+  <img src="img/formationset.png">
 
   <p>The catch is that they can't communicate with each other -- in any moment, each bug can only observe what the others are doing and make its own judgement call about whether to turn on or off. If their goals are to self-correct errors in formations:</p>
 
-  <div class="flex-container">
-    <img src="img/pat4err.png">
-    <i class="fa fa-arrow-right"></i>
-    <img src="img/pat4.png">
-  </div>
+  <img src="img/formationcorrection1.png">
 
   <p>and to converge to some formation if they start from randomness:</p>
 
-  <div class="flex-container">
-    <img src="img/noise.png">
-    <i class="fa fa-arrow-right"></i>
-    <img src="img/pat4.png">
-  </div>
+  <img src="img/formationcorrection2.png">
 
   <p>then how can we get them to coordinate as a group? Let's start with the simplest case, where there's only one formation.</p>
 
-  <div class="solo-img">
-    <img src="img/pat1.png">
-  </div>
+  <img src="img/pat1.png">
 
   <p>First, the network initializes. Each lightning bug in the grid makes a note of whether it "agrees" with each of the others (i.e., both bugs are on, or both bugs are off).</p>
 
@@ -143,10 +116,7 @@
 
   <p>Now, let's say it's a little more complicated. Instead of just one, there are two memories:</p>
 
-  <div class="flex-container">
-    <img src="img/pat1.png">
-    <img src="img/pat5.png">
-  </div>
+  <img src="img/2mems.png">
 
   <p>Linda's map changes. She still agrees with her own row no matter what, but now there's a 50/50 chance she'll agree with each of the bugs outside her row. This is Linda's new view of the world:</p>
 
@@ -177,34 +147,23 @@
 
   <p>Let's say we start the network in this formation--very close to one of its two memories, but with a small error:</p>
 
-  <div class="solo-img">
-    <img src="img/lindaoff.png">
-  </div>
+  <img src="img/lindaoff.png">
 
   <p>Each lightning bug now has to choose to either remain in its current state or to turn on/off. Each essentially makes a weighted decision based on how its own stored mental map matches its current surroundings.</p>
 
   <p>Let's zoom in on Linda. According to her mental map, there's a 50/50 chance she agrees with any of the bugs outside her row. So, the fact that they're all off doesn't influence her either way. However, she knows that she should <span class="italic">always</span> agree with the bugs in her own row. Seeing that they're all on, she thinks "Oh gosh, clearly I've made a mistake!" and turns on.</p>
 
-  <div class="flex-container">
-    <img src="img/lindaoffoverlay.png">
-    <i class="fa fa-arrow-right"></i>
-    <img src="img/lindaon.png">
-  </div>
+  <img src="img/lindamove1.png">
 
   <p>Meanwhile, each of the other bugs were making similar calculations of their own. Let's look at the thought process of the lightning bug just to the right of Linda:</p>
 
-  <div class="flex-container">
-    <img src="img/lindafriend.png">
-    <img src="img/lindafriendoverlay.png">
-  </div>
+  <img src="img/notlinda.png">
 
   <p>Like Linda, the fact that the bugs outside of her row are all off doesn't tell her anything about herself. However, when she looks at her own row, she gets a mixed picture. Two of the bugs in her row are on, but Linda is off. This sends her mixed signals: she's thinking "I agree with Alfred 100% of the time, and he's on; I agree with Frances 100% of the time, and she's on; and I agree with Linda 100% of the time, but she's <span class="italic">off!</span>" So, she weighs the conflicting information together and decides that, since more of her friends are on than off, she should probably be on. So, she doesn't change.</p>
 
   <p>Linda was the only lightning bug to change, and so the network quickly corrected.</p>
 
-  <div class="solo-img">
-    <img src="img/pat1.png">
-  </div>
+  <img src="img/pat1.png">
 
   <div class="view-more"><button id="view-more" value="collapsed">Click To Show More Detailed Math<br><i class="fa fa-chevron-down" aria-hidden="true"></i></button></div>
 
@@ -212,10 +171,7 @@
 
     <p>More precisely, we assign a binary value of 1 to represent "on" and -1 to represent "off" to the state of each neuron.</p>
 
-    <div class="flex-container">
-      <img src="img/pat1binary.png">
-      <img src="img/pat5binary.png">
-    </div>
+    <img src="img/realmath.png">
 
     <p>We initialize the network -- the weights that indicate the strength of the relationship between each pair of neurons is a little more complicated than basic percentages.</p>
 
@@ -223,21 +179,13 @@
 
     <p>When it's time for the network to act, each neuron calculates its own <span class="italic">weighted sum</span> of the values of the other neurons. So, if we examine the neuron in row 2, column 3, it multiplies the state of each other neuron by the weight it shares with that neuron and sums the result.</p>
 
-    <div class="flex-container">
-      <img src="img/binary.png">
-      <i class="fa fa-times"></i>
-      <img src="img/lindaoffbinaryoverlay.png">
-    </div>
+    <img src="img/realmathmult.png">
 
     <p style="text-align: center">1 + 1 + 1 = 3</p>
 
     <p>If the weighted sum is positive, then we say the neuron should be on. If the weighted sum is negative, it should be off. Once each neuron has determined what state they "should" be in, they each change their state (or stay the same) accordingly. </p>
 
-    <div class="flex-container">
-      <img src="img/binary.png">
-      <i class="fa fa-arrow-right"></i>
-      <img src="img/pat1binary.png">
-    </div>
+    <img src="img/realmathmove.png">
 
     <p>This is a <span class="italic">synchronous</span> update: all neurons update their state in unison.</p>
 
@@ -245,23 +193,17 @@
 
   <p>What if our initial state is slightly different?</p>
 
-  <div class="solo-img">
-    <img src="img/osc1.png">
-  </div>
+  <img src="img/osc1.png">
 
   <p>What happens next is a little strange. The two lightning bugs in the center each see two members of their row on and one off. Since, from their persepctive, more bugs in their row are on than off, they both decide they should turn on.</p>
 
   <p>However, for the two lightning bugs on the edge, they each see two members of their row <span class="italic">off</span> and one <span class="italic">on</span>. Since more in their row are off than on, they both decide to turn off.</p>
 
-  <div class="solo-img">
-    <img src="img/osc2.png">
-  </div>
+  <img src="img/osc2.png">
 
   <p>The row flipped -- but now the process repeats itself! The bugs in the middle deduce they should both be off, while the ones on the edge deduce they should be on.</p>
 
-  <div class="solo-img">
-    <img src="img/osc1.png">
-  </div>
+  <img src="img/osc1.png">
 
   <p>We end up back where we started -- the process repeats endlessly, and the network never converges to a stable state.</p>
 
@@ -273,11 +215,7 @@
 
   <p>First, note that when the network initializes, it doesn't distinguish between neurons being "both on" versus "both off" -- it only takes into account whether they "agree" or "disagree." This means the network might converge to "negatives" of memories.</p>
 
-  <div class="flex-container">
-    <img src="img/pat1.png">
-    <i class="fa fa-arrows-h"></i>
-    <img src="img/pat1negative.png">
-  </div>
+  <img src="img/negatives.png">
 
   <p>We can also end up converging to states that are neither memories nor their negatives -- this happens with greater likelihood if we overload the network. If we try to store too many memories for the size of our network, then it won't behave cleanly and will converge to false memories, and it may not be able to converge to some stored memories at all.</p>
 
