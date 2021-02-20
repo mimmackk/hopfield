@@ -188,3 +188,7 @@ button:focus {
   padding: 2px;
   font-weight: bold;
 }
+
+.byline {
+  text-align: center;
+}
